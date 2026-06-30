@@ -1,0 +1,43 @@
+ &switches
+    plotball    =.false.
+    build_cone  =.true.
+    showdist    =.true.
+    EPSL14      =.true.
+    avalanche   =.false.
+    backlanche  =.false.
+    airlessan   =.true.
+    flatan      =.true.
+    rndsmooth   =.true.
+    checkvolume =.false.
+  &end
+  
+ &params
+    conetop =10000.
+    incrvol =2.e8
+    rhorock =850.
+    grav    =3.7       !Mars 3.71  Earth 9.81
+    rhoair  =0.0       !Mars 0.01  Earth 1.2
+    maxvol  =13.e9
+  &end 
+  
+ &ranges
+    dmin    =0.0001     !0.01
+    dmax    =0.3
+    vmin    =10.
+    vmax    =450.
+    angmax  =60.
+    angdev  =22.
+    tmax    =3000.
+    dmean   =0.01
+    ddev    =0.3
+    vmean   =100.        ! 46.0 92.0 119.6
+    vdev    =0.08
+    basemax =60.e3
+  &end  
+ 
+ &solvers
+    ilib     =1
+    eps      =1.e-9
+    MAXSTP   =10000
+    OPTSTP   =4000
+  &end

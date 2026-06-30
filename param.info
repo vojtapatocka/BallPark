@@ -1,0 +1,39 @@
+ &switches
+    build_cone  =.true.
+    showdist    =.false.        ! Shows the particle parameters distributions employed
+    EPSL14      =.true.         ! Shape of distributions from Broz et al., 2014
+    airlessan   =.false.        ! Analytical (airless) solutions
+    flatan      =.false.        ! Flat base of the scoria cone (topography is not gradually adjusted)
+    rndsmooth   =.true.         ! Adding more randomisation avoid oscillations due even grid spacing 
+  &end
+  
+ &params
+    conetop =1000.              ! Maximum height of the cone
+    incrvol =5.e9               ! Volume increment of each layer
+    rhorock =850.               ! Density of the scoria particles
+    grav    =3.7                ! Gravity. Mars 3.71  Earth 9.81
+    rhoair  =0.0                ! Air density. Mars 0.01  Earth 1.2
+    maxvol  =5.e9               ! Volume of the cone to be reached
+  &end 
+  
+ &ranges
+    dmin    =0.0001     !0.01
+    dmax    =0.3
+    vmin    =10.
+    vmax    =300.
+    angmax  =45.
+    angdev  =31.
+    tmax    =3000.
+    dmean   =0.04
+    ddev    =0.3
+    vmean   =46.        ! 46.0 92.0 119.6
+    vdev    =0.2
+    basemax =50.e3
+  &end  
+ 
+ &solvers
+    ilib     =1         ! Numerical solver (Runge Kutta or explicit Euler)
+    eps      =1.e-9     ! Error threshold used when optimalizing time stepping
+    MAXSTP   =10000     ! Maximum number of time steps when computing one ballistic trajectory
+    OPTSTP   =3000      ! Optimal number of time steps when computing one ballistic trajectory
+  &end
